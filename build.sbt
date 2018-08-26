@@ -29,6 +29,8 @@ scalacOptions ++= Seq(
   "-Xfuture"
 )
 
+Test / fork := true
+
 scalacOptions in(Compile, doc) ++= Seq("-groups", "-implicits", "-no-link-warnings")
 
 resolvers += Resolver.bintrayRepo("evolutiongaming", "maven")
