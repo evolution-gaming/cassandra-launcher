@@ -14,7 +14,7 @@ bintrayOrganization := Some("evolutiongaming")
 
 scalaVersion := crossScalaVersions.value.last
 
-crossScalaVersions := Seq("2.11.12", "2.12.6")
+crossScalaVersions := Seq("2.11.12", "2.12.7")
 
 scalacOptions ++= Seq(
   "-encoding", "UTF-8",
@@ -36,7 +36,7 @@ scalacOptions in(Compile, doc) ++= Seq("-groups", "-implicits", "-no-link-warnin
 resolvers += Resolver.bintrayRepo("evolutiongaming", "maven")
 
 libraryDependencies ++= Seq(
-  "com.evolutiongaming" %% "tmp-dir" % "0.0.1",
+  "com.evolutiongaming" %% "tmp-dir" % "0.0.3",
   "org.apache.cassandra" % "cassandra-all" % "3.11.3" exclude("commons-logging", "commons-logging"),
   "org.scalatest" %% "scalatest" % "3.0.5" % Test)
 

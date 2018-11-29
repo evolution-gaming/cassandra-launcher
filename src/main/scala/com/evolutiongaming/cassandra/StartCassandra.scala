@@ -1,7 +1,8 @@
 package com.evolutiongaming.cassandra
 
-import java.io.File
+import java.nio.file.Files
 
+import com.evolutiongaming.file.PathHelper._
 import com.evolutiongaming.tmpdir.TmpDir
 import org.apache.cassandra.config.DatabaseDescriptor
 import org.apache.cassandra.service.CassandraDaemon
@@ -18,12 +19,11 @@ object StartCassandra {
 
   def apply(): Shutdown = {
 
-    val tmpDir = TmpDir("cassandra-")
-
+    val tmpDir = TmpDir("cassandra-", deleteOnExit = false)
     val trigger = {
-      val file = new File(tmpDir.file, "triggers")
-      if (!file.exists()) file.mkdir()
-      file
+      val triggers = tmpDir.path.resolve("triggers")
+      if (!triggers.exists()) Files.createDirectory(triggers)
+      triggers
     }
 
     val props = Map(
@@ -32,11 +32,11 @@ object StartCassandra {
       ("cassandra.native.epoll.enabled", "false"),
       ("cassandra.unsafesystem", "true"),
       ("com.datastax.driver.FORCE_NIO", "true"),
-      ("cassandra.triggers_dir", trigger.getAbsolutePath))
+      ("cassandra.triggers_dir", trigger.toAbsolutePath.toString))
 
     props.foreach { case (k, v) => Properties.setProp(k, v) }
 
-    val config = ServerConfig(tmpDir.file.getAbsolutePath)
+    val config = ServerConfig(tmpDir.path.toAbsolutePath.toString)
     ConfigLoader.config = config.asJava
     DatabaseDescriptor.daemonInitialization()
     DatabaseDescriptor.createAllDirectories()
