@@ -1,8 +1,8 @@
 package com.evolutiongaming.cassandra
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class StartCassandraSpec extends FunSuite {
+class StartCassandraSpec extends AnyFunSuite {
 
   test("start and stop cassandra") {
     val shutdown = StartCassandra()
