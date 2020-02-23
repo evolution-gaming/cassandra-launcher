@@ -24,7 +24,7 @@ resolvers += Resolver.bintrayRepo("evolutiongaming", "maven")
 
 libraryDependencies ++= Seq(
   "com.evolutiongaming"  %% "tmp-dir"       % "0.0.4",
-  "org.apache.cassandra"  % "cassandra-all" % "3.11.5" exclude("commons-logging", "commons-logging"),
+  "org.apache.cassandra"  % "cassandra-all" % "3.11.6" exclude("commons-logging", "commons-logging"),
   "org.scalatest"        %% "scalatest"     % "3.1.1" % Test)
 
 licenses := Seq(("MIT", url("https://opensource.org/licenses/MIT")))
