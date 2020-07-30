@@ -23,7 +23,7 @@ scalacOptions in(Compile, doc) ++= Seq("-groups", "-implicits", "-no-link-warnin
 resolvers += Resolver.bintrayRepo("evolutiongaming", "maven")
 
 libraryDependencies ++= Seq(
-  "com.evolutiongaming"  %% "tmp-dir"       % "0.0.4",
+  "com.evolutiongaming"  %% "tmp-dir"       % "0.0.5",
   "org.apache.cassandra"  % "cassandra-all" % "3.11.6" exclude("commons-logging", "commons-logging"),
   "org.scalatest"        %% "scalatest"     % "3.2.0" % Test)
 
