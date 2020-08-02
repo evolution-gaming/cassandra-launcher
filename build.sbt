@@ -14,7 +14,7 @@ bintrayOrganization := Some("evolutiongaming")
 
 scalaVersion := crossScalaVersions.value.head
 
-crossScalaVersions := Seq("2.13.0", "2.12.9")
+crossScalaVersions := Seq("2.13.3", "2.12.12")
 
 Test / fork := true
 
@@ -23,8 +23,8 @@ scalacOptions in(Compile, doc) ++= Seq("-groups", "-implicits", "-no-link-warnin
 resolvers += Resolver.bintrayRepo("evolutiongaming", "maven")
 
 libraryDependencies ++= Seq(
-  "com.evolutiongaming"  %% "tmp-dir"       % "0.0.4",
-  "org.apache.cassandra"  % "cassandra-all" % "3.11.6" exclude("commons-logging", "commons-logging"),
+  "com.evolutiongaming"  %% "tmp-dir"       % "0.0.5",
+  "org.apache.cassandra"  % "cassandra-all" % "3.11.7" exclude("commons-logging", "commons-logging"),
   "org.scalatest"        %% "scalatest"     % "3.2.0" % Test)
 
 licenses := Seq(("MIT", url("https://opensource.org/licenses/MIT")))
