@@ -6,21 +6,19 @@ homepage := Some(new URL("http://github.com/evolution-gaming/cassandra-launcher"
 
 startYear := Some(2018)
 
-organizationName := "Evolution Gaming"
+organizationName := "Evolution"
 
-organizationHomepage := Some(url("http://evolutiongaming.com"))
-
-bintrayOrganization := Some("evolutiongaming")
+organizationHomepage := Some(url("http://evolution.com"))
 
 scalaVersion := crossScalaVersions.value.head
 
-crossScalaVersions := Seq("2.13.3", "2.12.12")
+crossScalaVersions := Seq("2.13.5", "2.12.13")
 
 Test / fork := true
 
-scalacOptions in(Compile, doc) ++= Seq("-groups", "-implicits", "-no-link-warnings")
+Compile / doc / scalacOptions ++= Seq("-groups", "-implicits", "-no-link-warnings")
 
-resolvers += Resolver.bintrayRepo("evolutiongaming", "maven")
+publishTo := Some(Resolver.evolutionReleases)
 
 libraryDependencies ++= Seq(
   "com.evolutiongaming"  %% "tmp-dir"       % "0.0.5",
