@@ -2,7 +2,7 @@ name := "cassandra-launcher"
 
 organization := "com.evolutiongaming"
 
-homepage := Some(new URL("http://github.com/evolution-gaming/cassandra-launcher"))
+homepage := Some(url("https://github.com/evolution-gaming/cassandra-launcher"))
 
 startYear := Some(2018)
 
@@ -30,3 +30,7 @@ licenses := Seq(("MIT", url("https://opensource.org/licenses/MIT")))
 releaseCrossBuild := true
 
 scalacOptsFailOnWarn := Some(false)
+
+//addCommandAlias("check", "all versionPolicyCheck Compile/doc")
+addCommandAlias("check", "show version")
+addCommandAlias("build", "+all compile test")
