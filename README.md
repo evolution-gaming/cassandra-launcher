@@ -1,3 +1,7 @@
+# IMPORTANT!!!
+
+This project is not maintained any more! Please consider to use [testcontainers](https://testcontainers.com/guides/introducing-testcontainers/) instead.
+
 # Cassandra Launcher
 [![Build Status](https://github.com/evolution-gaming/cassandra-launcher/workflows/CI/badge.svg)](https://github.com/evolution-gaming/cassandra-launcher/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/evolution-gaming/cassandra-launcher/badge.svg?branch=master)](https://coveralls.io/github/evolution-gaming/cassandra-launcher?branch=master)
