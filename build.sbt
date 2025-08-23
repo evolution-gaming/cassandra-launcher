@@ -21,7 +21,7 @@ Compile / doc / scalacOptions ++= Seq("-groups", "-implicits", "-no-link-warning
 publishTo := Some(Resolver.evolutionReleases)
 
 libraryDependencies ++= Seq(
-  "com.evolutiongaming"  %% "tmp-dir"       % "0.0.5",
+  "com.evolutiongaming"  %% "tmp-dir"       % "0.0.6",
   "org.apache.cassandra"  % "cassandra-all" % "3.11.7" exclude("commons-logging", "commons-logging"),
   "org.scalatest"        %% "scalatest"     % "3.2.3" % Test)
 
